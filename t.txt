@@ -1,0 +1,153 @@
+html + css 하드하게
+
+- 웹의 컴포넌트 실제로는 다 객체다
+
+1) Framework 위에서 개발
+- React: Next.js 가상돔() / Svelte 돔을 직접 제어
+- Veu
+- Angular
+- 정보 변경이 일어난 부분만 조절할 수있게 할 수 있는 돔
+
+2) 클라이언트 사이드 랜더링, 서버사이드 랜더링
+- 클라이언트 사이드 랜더링 -> js 실행 -> dom 생성 -> 브라우저
+- 서버사이드 랜더링 -> html -> 각종 태그의 생성을 서버에서 브라우저에게 제공한다. 
+- 우리가 할 것은 서버사이드 랜더링이다. 
+
+3) 스벨트 설치법
+- svelte kit cmd에서 설치
+- cmd에서 설정 선택
+
+4) 스벨트 사용법 기초
+- .으로 시작하는 파일은 우리가 건드는 것이 아니다. 
+
+5) Git
+- 소스 버전 관리
+- 협업
+- git / github(git 서비스 제공하는 것 중 하나)
+
+6) firebase? : (뭐하는거지?)
+- -g로 깔면, 내 컴퓨터 전역을 접근 할 수 있게 까는것(?)
+- npm i -g firebase-tools
+- 문제: firebase가 깔리지 않는다. "-" 빠짐
+- login
+- firebase login 하고, 이메일 입력
+
+// 패키지 json은, 명령어 정리, 언어에 대한 소개
+- npm run dev  --> 이건 뭘 해주는 거지? 스벨트 실행? 
+- crtl + c  //run 종료하기 --> 무얼 종료해주는 것인가? 
+
+7)firebase로 deploy 하기.. 
+- deploy가 뭐지? 
+- build로 나오길 원한다. 파이어 베이스에 올려서 보여주고 싶은 것이다.
+--> 빌드 폴더가 안만들어진다. 
+
+npm i @sveltejs/adapter-static
+npm run build
+deploy --only hosting - deploy 한다는 것은 뭐지..
+
+css, scss, sass ? 차이가 뭐지? - 이게 뭐지?
+
++ route 안에 있는 것은 페이지로 나간다.
+
+<과제>
+// 스벨트 설치 
+// 깃 레포지토리 연결 
+// firebase 설치, 배포 
+// 계산기 만들기 //스크립트 짜본 경험을 갖기 위해. 
+// 지난 시간에 만들 사이트 여기로 옮겨 보기 , 최대한 컴포넌트화 시켜주기. 
+// 최대한 해오기 
+// 과제 검사. deploy 해서, 질문을 하면 답변을 주겠다. 깃허브 링크를 같이 줘라. 
+// 다음 주, 다다음 주 그래프 그리기, 인터렉션도 할것이다. 
+
+
+1. 스벨트 설치
+    1) svelte kit 검색, cmd 명령어 복사
+    2) npm create svelte (작업중인 프로젝트 폴더)
+        cd (작업중인 프로젝트 폴더)
+        npm install
+        npm run dev -- --open --> 창 바로 뜬다 5)
+    3) 여러가지 설정 선택해주기--> 기억을 못한다..(구글한테 물어보기)
+    4) 프로젝트 폴더에 여러가지 파일 생성 된것 확인
+    5) welcome to svelte 창 뜨는 지 확인.(!!!!!) --> 이 창 어떻게 키는지 다시..
+
+
+2. 깃 레포지토리 연결 
+    1) github 에서 새로운 레포지토리 생성
+    2) echo "# 2022_web" >> README.md
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/kimmyoungji/2022_web.git
+        git push -u origin main
+        위의 코드 cmd 창에 입력하여, 컴퓨터의 폴더를 레포지토리로 연결시켜주기
+        --> 이게 안되는데, 이유를 모르겠다.(!!!!!)
+        - git config --global user.email "kmjoyit21045@gmail.com" 이거 입력해주기
+        - cmd 창 잘 읽어보기
+
+3. firebase 설치, 배포 
+    1)firebase 검색, 새로운 프로젝트 생성
+    2) cmd에창에서 firebase 설치
+    - 명령어: npm i -g  firebase-tools (전역에서 접근할 수 있게 설치해주기)
+    3) firebase 로그인 해주기
+    - 명령어: firebase login
+    4) npm run dev  (ctrl+c가 런 종료 하는 키) -->?? 이거 뭐 해주는 명령어 인가? 
+    5) firebase deploy --only hosting //배포해주기
+    6) build 폴더 생성 됨을 확인 (!!!!!)
+    7) firebase 사이트에서 배포된 프로젝트 확인
+
+    
+4. 계산기 만들기 시작
+    1) route 안에 있는 파일들이 배포가 된다.
+
+
+    Firebase
+    === Project Setup(프로젝트 셋업)
+
+    First, let's associate this project directory with a Firebase project.
+    You can create multiple project aliases by running firebase use --add,
+    but for now we'll just set up a default project.
+    
+    ? Please select an option: Use an existing project
+    
+    ? Select a default Firebase project for this directory: web-1746d (2022web)
+    i  Using project web-1746d (2022web)
+
+    === Hosting Setup
+
+    Your public directory is the folder (relative to your project directory) that
+    will contain Hosting assets to be uploaded with firebase deploy. If you
+    have a build process for your assets, use your build's output directory.
+
+    ? What do you want to use as your public directory? public
+    ? Configure as a single-page app (rewrite all urls to /index.html)? No
+    ? Set up automatic builds and deploys with GitHub? No
+    +  Wrote public/404.html
+    +  Wrote public/index.html
+
+
+이거 추가해주어야지, build 폴더가 생성된다.
+    // import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
+import preprocess from 'svelte-preprocess';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	// Consult https://github.com/sveltejs/svelte-preprocess
+	// for more information about preprocessors
+	preprocess: preprocess(),
+
+	kit: {
+		adapter: adapter({
+			fallback: 'index.html',
+			tralingSlash: 'always'
+		}),
+		alias: {
+			'@src': 'src'
+		}
+	}
+};
+
+export default config;
+
+강사님 깃 확인하기
