@@ -91,7 +91,8 @@ css, scss, sass ? 차이가 뭐지? - 이게 뭐지?
     - 명령어: npm i -g  firebase-tools (전역에서 접근할 수 있게 설치해주기)
     3) firebase 로그인 해주기
     - 명령어: firebase login
-    4) npm run dev  (ctrl+c가 런 종료 하는 키) -->?? 이거 뭐 해주는 명령어 인가? 
+    4) npm run dev  (ctrl+c가 런 종료 하는 키) -->?? 이거 뭐 해주는 명령어 인가?
+    + package.jason 의 코드를 수정해주어야 한다. 
     5) firebase deploy --only hosting //배포해주기
     6) build 폴더 생성 됨을 확인 (!!!!!)
     7) firebase 사이트에서 배포된 프로젝트 확인
