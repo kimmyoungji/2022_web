@@ -92,12 +92,12 @@ css, scss, sass ? 차이가 뭐지? - 이게 뭐지?
     3) firebase 로그인 해주기
     - 명령어: firebase login
     4) npm run dev  (ctrl+c가 런 종료 하는 키) -->?? 이거 뭐 해주는 명령어 인가?
-    + package.jason 의 코드를 수정해주어야 한다. 
+    + package.jason 의 코드를 수정해주어야 한다.(땡 아님) --> svelte.config.js의 코드를 수정해주어야함.
+    ?) build 폴더 생성 됨을 확인 (!!!!!)
+    + deploy 전에, npm run build  를 꼭 해주어야한다. // node js 통해 build 된 결과물이 firebase에 deploy 되는 것이기 때문이다.
     5) firebase deploy --only hosting //배포해주기
-    6) build 폴더 생성 됨을 확인 (!!!!!)
     7) firebase 사이트에서 배포된 프로젝트 확인
 
-    
 4. 계산기 만들기 시작
     1) route 안에 있는 파일들이 배포가 된다.
 
@@ -127,7 +127,7 @@ css, scss, sass ? 차이가 뭐지? - 이게 뭐지?
     +  Wrote public/index.html
 
 
-이거 추가해주어야지, build 폴더가 생성된다.
+sevlte.config.js에 이거 추가해주어야지, build 폴더가 생성된다.
     // import adapter from '@sveltejs/adapter-auto';
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
